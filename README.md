@@ -1,2 +1,2 @@
-# HerculanosShop
+# Jane Jeans
 Clothing Shop
