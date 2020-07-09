@@ -10,8 +10,10 @@ const IndexPage = () => (
       <title>Página Inicial | Jane Jeans</title>
       <meta name="description" content="Página Inicial da loja Jane Jeans, as melhores roupas!" />
     </Helmet>
-    <Carousel />
-    <Layout />
+    <Layout>
+      <div className="mt-5"></div>
+      <Carousel />
+    </Layout>
   </Fragment>
 )
 

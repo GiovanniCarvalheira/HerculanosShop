@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import './layout.sass'
 
 import Header from '../Header/header'
 import Footer from '../Footer/footer'

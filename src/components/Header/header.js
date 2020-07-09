@@ -1,19 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faStar, faHome, faUser } from '@fortawesome/free-solid-svg-icons'
-import './header.sass'
+import { faSearch, faStar, faHome, faUser, faBars } from '@fortawesome/free-solid-svg-icons'
+import '../../sass/style.sass'
 
 export default function Header () {
+  const [ShowMenu, setShowMenu] = useState(false)
   return (
     <Fragment>
-      <nav className="navbar navbar-expand-lg fixed-top pt-1">
-        <span className="navbar-brand mr-5 logo mb-2">Jane Jeans</span>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top bg-tertiary-custom pt-1">
+        <span className="navbar-brand mr-5 logo mb-2 text-primary-custom"><Link className="text-primary-custom" to="/">Jane Jeans</Link></span>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onClick={() => setShowMenu(!ShowMenu)}>
+          <FontAwesomeIcon icon={faBars} />
         </button>
-        <div className="collapse show navbar-collapse" id="navbarNav">
+        <div className={ShowMenu === true ? 'collapse show navbar-collapse' : 'collapse navbar-collapse'} id="navbarNav">
           <ul className="navbar-nav mr-auto">
             <li className="list-unstyled mt-2 mt-lg-0">
               <Link className="navbar-button-text mr-3" to="/masculino">Masculino</Link>
@@ -23,21 +24,25 @@ export default function Header () {
             </li>
           </ul>
           <li className="list-unstyled mt-2 mt-lg-0">
-            <button className="btn btn-sm navbar-button mr-2">
-              <Link to="/login"><FontAwesomeIcon icon={faStar} /></Link>
-            </button>
+            <Link to="/login">
+              <button className="btn btn-sm navbar-button mr-2">
+                <FontAwesomeIcon icon={faStar} />
+              </button>
+            </Link>
           </li>
           <li className="list-unstyled mt-2 mt-lg-0">
-            <button className="btn btn-sm navbar-button mr-2">
-              <Link to="/login"><FontAwesomeIcon icon={faHome} /></Link>
-            </button>
+            <Link to="/login">
+              <button className="btn btn-sm navbar-button mr-2">
+                <FontAwesomeIcon icon={faHome} />
+              </button>
+            </Link>
           </li>
           <li className="list-unstyled mt-2 mt-lg-0">
-            <button className="btn btn-sm navbar-button mr-4">
-              <Link to="/login">
+            <Link to="/login">
+              <button className="btn btn-sm navbar-button mr-4">
                 <FontAwesomeIcon icon={faUser} />
-              </Link>
-            </button>
+              </button>
+            </Link>
           </li>
           <li className="list-unstyled mt-2 mt-lg-0">
             <Link className="navbar-button-text mr-4" to="/login">Entrar</Link>

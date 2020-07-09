@@ -12,26 +12,26 @@ export default function CarouselDesktop () {
         relativePath: { eq: "images/roupas.jpg" }
       ) {
         childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+          fluid(maxWidth: 1200, maxHeight: 600 quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       Imagem2: file(
-        relativePath: { eq: "images/roupas.jpg" }
+        relativePath: { eq: "images/roupas2.jpg" }
       ) {
         childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+          fluid(maxWidth: 1200, maxHeight: 600 quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
       Imagem3: file(
-        relativePath: { eq: "images/roupas.jpg" }
+        relativePath: { eq: "images/roupas3.jpg" }
       ) {
         childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+          fluid(maxWidth: 1200, maxHeight: 600 quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -42,13 +42,13 @@ export default function CarouselDesktop () {
     <Fragment>
       <Carousel showArrows={true} showThumbs={false} showIndicators={false} showStatus={false} infiniteLoop={true} autoPlay={true}>
         <div>
-          <Img style={{ height: '500px' }} fluid={data.Imagem1.childImageSharp.fluid} draggable={false} alt="Imagem de roupas no carousel 1" />
+          <Img fluid={data.Imagem1.childImageSharp.fluid} draggable={false} alt="Imagem de roupas no carousel 1" />
         </div>
         <div>
-          <Img style={{ height: '500px' }} fluid={data.Imagem2.childImageSharp.fluid} draggable={false} alt="Imagem de roupas no carousel 2" />
+          <Img fluid={data.Imagem2.childImageSharp.fluid} draggable={false} alt="Imagem de roupas no carousel 2" />
         </div>
         <div>
-          <Img style={{ height: '500px' }} fluid={data.Imagem3.childImageSharp.fluid} draggable={false} alt="Imagem de roupas no carousel 3" />
+          <Img fluid={data.Imagem3.childImageSharp.fluid} draggable={false} alt="Imagem de roupas no carousel 3" />
         </div>
       </Carousel>
     </Fragment>

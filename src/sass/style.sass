@@ -1,0 +1,57 @@
+@import 'config'
+@import 'utilities'
+
+nav
+  .logo
+    font-size: 30px
+
+  .search
+    background-color: $secundary-color
+    border-color: $secundary-color
+    color: $quaternary-color
+    &:hover
+      background-color: $primary-color
+      border-color: $primary-color
+      color: $secundary-color
+
+  .navbar-button
+    background-color: $secundary-color
+    color: $quaternary-color
+    &:hover
+      background-color: $primary-color
+      text-decoration: none
+      a
+        color: $secundary-color
+    a
+      color: $primary-color
+
+  .navbar-button-text
+    color: $secundary-color
+    &:hover
+      color: $primary-color
+      text-decoration: none
+
+  .navbar-toggler
+    border: 1px solid $primary-color !important
+    color: $primary-color !important
+
+      
+*
+  font-family: 'Roboto', sans-serif
+
+div
+  .text-silver
+    color: $secundary-color
+    
+  a
+    color: $secundary-color
+    &:hover
+      color: $primary-color
+      text-decoration: none
+      button:first-child
+        color: $secundary-color
+
+  .footer-button
+    background-color: $secundary-color
+    &:hover
+      background-color: $primary-color
