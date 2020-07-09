@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import Layout from '../components/Layout/layout'
 import 'bootstrap/dist/css/bootstrap.css'
 import Carousel from '../components/Carousel/carousel'
+import Index from '../components/Index/index'
 import { Helmet } from 'react-helmet'
 
 const IndexPage = () => (
@@ -13,6 +14,7 @@ const IndexPage = () => (
     <Layout>
       <div className="mt-5"></div>
       <Carousel />
+      <Index />
     </Layout>
   </Fragment>
 )
